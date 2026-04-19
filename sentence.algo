@@ -1,20 +1,27 @@
 ALGORITHM sentenceCalculator
 VAR
     s : STRING
-    words := 1, vowels := 0, i := 0, l:= 0 : INTEGER
+    words := 0, vowels := 0, i := 0 : INTEGER
 BEGIN
     Write("Enter the sentence")
     Read(s)
+    // l = length(s)
+    // FOR i FROM 0 TO l - 1 DO
+    //     if(s(i) == " ") {
+    //         words++
+    //     } ELSE_IF(s(i) == ("A" OR "E" OR "I" OR "O" OR "U" OR "a" OR "e" OR "i" OR "o" OR "u")) {
+    //         vowels++
+    //     } 
+    // END_FOR
+
     WHILE (s(i) != ".") DO
-        if(s(i) != " ") {
-            l++
-        } ELSE_IF(s(i) == "A" OR s(i) == "E" OR s(i) == "I" OR s(i) == "O" OR s(i) == "U" OR s(i) == "a"
-                    OR s(i) == "e" OR s(i) == "i" OR s(i) == "o" OR s(i) == "u") {
-            vowels++
-        } ELSE {
+        if(s(i) == " ") {
             words++
+        } ELSE_IF(s(i) == "A" OR s(i) == "E" OR s(i) == "I" OR s(i) == "O" OR s(i) == "U" OR s(i) == "a"
+                     OR s(i) == "e" OR s(i) == "i" OR s(i) == "o" OR s(i) == "u") {
+            vowels++
         }
         i++
     END_WHILE
-    Write("the number of words is:", words, "the number of vowels is:", vowels, "the number of characters is:", l)
+    Write("the number of words is:", words + 1, "the number of vowels is:", vowels, "the number of characters is:", i + 1)
 END
